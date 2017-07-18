@@ -33,7 +33,7 @@ namespace ScreenRecord
         private int _height;
         private ScreenCaptureStream _streamVideo;
         private Stopwatch _stopWatch;
-        private Rectangle _screenArea = new Rectangle(0, 0, 600, 500);
+        private Rectangle _screenArea;
 
         
         private WasapiCapture capture = null;
@@ -137,6 +137,8 @@ namespace ScreenRecord
             this.cb_BitRate.DataSource = Enum.GetValues( typeof( BitRate ) );
             this.cb_BitRate.DropDownStyle = ComboBoxStyle.DropDownList;
             this.cb_BitRate.SelectedIndex = 5;  //비트레이트 초기값
+
+            this.tb_SaveFolder.Text = "C:\\Users\\Administrator\\Documents\\Recorder";
         }
 
         private void bt_start_Click( object sender, EventArgs e )
@@ -174,15 +176,16 @@ namespace ScreenRecord
             {
                 foreach ( Screen screen in Screen.AllScreens )
                 {
+                    this._screenArea = new Rectangle(0,0,0,0);
                     //this._screenArea = Rectangle.Union( _screenArea, screen.Bounds );
                     if (form2.Width % 2 == 1) form2.Width = form2.Width + 1;
-                    this._screenArea.Width = form2.Width-20;
-                    this._width = form2.Width-20;
+                    this._screenArea.Width = form2.Width;
+                    this._width = form2.Width;
                     if (form2.Height % 2 == 1) form2.Height = form2.Height + 1;
-                    this._screenArea.Height = form2.Height-30;
-                    this._height = form2.Height-30;
+                    this._screenArea.Height = form2.Height;
+                    this._height = form2.Height;
 
-                    this._screenArea.Offset(form2.Left+10, form2.Top+30);
+                    this._screenArea.Offset(form2.Location.X, form2.Location.Y);
 
                 }
             }
@@ -197,7 +200,8 @@ namespace ScreenRecord
         {
             // create screen capture video source
             this._streamVideo = new ScreenCaptureStream( this._screenArea );
-
+            //MessageBox.Show(form2.Location.X.ToString() + " " + form2.Location.Y.ToString());
+            //MessageBox.Show(this._screenArea.Width.ToString() + " " + this._screenArea.Height.ToString());
             // set NewFrame event handler
             this._streamVideo.NewFrame += new NewFrameEventHandler( this.video_NewFrame );
 
@@ -214,12 +218,12 @@ namespace ScreenRecord
             {
                 this._frameCount += Convert.ToUInt32(fps);
                 this._writer.WriteVideoFrame( eventArgs.Frame );
-
+                /*
                 this.lb_1.Invoke( new Action( () =>
                 {
                     lb_1.Text = string.Format( @"Frames: {0}", _frameCount );
                 } ) );
-
+                */
                 this.lb_stopWatch.Invoke(new Action(() =>
               {
               this.lb_stopWatch.Text = string.Format("{0:00}:{1:00}:{2:00}", _stopWatch.Elapsed.Hours, _stopWatch.Elapsed.Minutes, (int)_stopWatch.Elapsed.Seconds);
@@ -293,11 +297,12 @@ namespace ScreenRecord
 
     public enum BitRate
     {
-        _500kbit = 50000,
-        _1000kbit = 1000000,
-        _2000kbit = 2000000,
         _3000kbit = 3000000,
         _4000kbit = 4000000,
         _5000kbit = 5000000,
+        _6000kbit = 6000000,
+        _7000kbit = 7000000,
+        _8000kbit = 8000000,
+
     }
 }

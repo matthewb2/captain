@@ -37,7 +37,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bt_start = new System.Windows.Forms.Button();
             this.bt_Save = new System.Windows.Forms.Button();
-            this.lb_1 = new System.Windows.Forms.Label();
             this.cb_VideoCodec = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +51,7 @@
             // 
             // bt_start
             // 
-            this.bt_start.Location = new System.Drawing.Point(288, 114);
+            this.bt_start.Location = new System.Drawing.Point(219, 121);
             this.bt_start.Margin = new System.Windows.Forms.Padding(2);
             this.bt_start.Name = "bt_start";
             this.bt_start.Size = new System.Drawing.Size(65, 31);
@@ -63,7 +62,7 @@
             // 
             // bt_Save
             // 
-            this.bt_Save.Location = new System.Drawing.Point(215, 114);
+            this.bt_Save.Location = new System.Drawing.Point(288, 121);
             this.bt_Save.Margin = new System.Windows.Forms.Padding(2);
             this.bt_Save.Name = "bt_Save";
             this.bt_Save.Size = new System.Drawing.Size(65, 31);
@@ -71,16 +70,6 @@
             this.bt_Save.Text = "중지";
             this.bt_Save.UseVisualStyleBackColor = true;
             this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
-            // 
-            // lb_1
-            // 
-            this.lb_1.AutoSize = true;
-            this.lb_1.Location = new System.Drawing.Point(8, 119);
-            this.lb_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lb_1.Name = "lb_1";
-            this.lb_1.Size = new System.Drawing.Size(45, 12);
-            this.lb_1.TabIndex = 3;
-            this.lb_1.Text = "프레임:";
             // 
             // cb_VideoCodec
             // 
@@ -127,6 +116,7 @@
             this.tb_SaveFolder.Name = "tb_SaveFolder";
             this.tb_SaveFolder.Size = new System.Drawing.Size(343, 21);
             this.tb_SaveFolder.TabIndex = 10;
+            this.tb_SaveFolder.Text = "C:\\Users\\Administrator\\Documents\\Recorder";
             // 
             // label4
             // 
@@ -173,7 +163,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(10, 152);
+            this.checkBox1.Location = new System.Drawing.Point(11, 129);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(48, 16);
             this.checkBox1.TabIndex = 17;
@@ -185,7 +175,7 @@
             this.AcceptButton = this.bt_start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 180);
+            this.ClientSize = new System.Drawing.Size(357, 171);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cb_screenSelector);
             this.Controls.Add(this.label5);
@@ -196,7 +186,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_VideoCodec);
-            this.Controls.Add(this.lb_1);
             this.Controls.Add(this.bt_Save);
             this.Controls.Add(this.bt_start);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -215,7 +204,6 @@
 
         private System.Windows.Forms.Button bt_start;
         private System.Windows.Forms.Button bt_Save;
-        private System.Windows.Forms.Label lb_1;
         private System.Windows.Forms.ComboBox cb_VideoCodec;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

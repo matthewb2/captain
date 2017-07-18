@@ -63,6 +63,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.resizeNode2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(100, 100);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
@@ -70,6 +71,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "form2";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Maroon;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
