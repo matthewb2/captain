@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D0C4E8D0486CD37000505A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */; };
+		BA0B5CCF0F5D245C004B5A82 /* GLee.c in Sources */ = {isa = PBXBuildFile; fileRef = BA0B5CCD0F5D245C004B5A82 /* GLee.c */; };
+		BA0B5CD90F5D249F004B5A82 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0B5CD80F5D249F004B5A82 /* CoreFoundation.framework */; };
+		BAB82A040F5BCD5100E95614 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB82A020F5BCD5100E95614 /* GLUT.framework */; };
+		BAB82A050F5BCD5100E95614 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB82A030F5BCD5100E95614 /* OpenGL.framework */; };
+		BAB82A790F5BD38D00E95614 /* ExposedParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB82A700F5BD38D00E95614 /* ExposedParameter.cpp */; };
+		BAB82A7A0F5BD38D00E95614 /* GLUTApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB82A720F5BD38D00E95614 /* GLUTApplication.cpp */; };
+		BAB82A7B0F5BD38D00E95614 /* SpringWater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB82A740F5BD38D00E95614 /* SpringWater.cpp */; };
+		BAB82A7C0F5BD38D00E95614 /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAB82A760F5BD38D00E95614 /* Math.cpp */; };
+		BAB82A7F0F5BD3C900E95614 /* ground.raw in Resources */ = {isa = PBXBuildFile; fileRef = BAB82A7D0F5BD3C900E95614 /* ground.raw */; };
+		BAB82A800F5BD3C900E95614 /* sky.raw in Resources */ = {isa = PBXBuildFile; fileRef = BAB82A7E0F5BD3C900E95614 /* sky.raw */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0867D6ABFE840B52C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		32DBCF6D0370B57F00C91783 /* SpringWaterMac_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringWaterMac_Prefix.pch; sourceTree = "<group>"; };
+		5048396D09E3307300765E4B /* SpringWaterMacProj.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = SpringWaterMacProj.xcconfig; sourceTree = "<group>"; };
+		5048396E09E3307300765E4B /* SpringWaterMacTarget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = SpringWaterMacTarget.xcconfig; sourceTree = "<group>"; };
+		508344B209E5C41E0093A071 /* SpringWaterMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpringWaterMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0C4E960486CD37000505A6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA0B5CCD0F5D245C004B5A82 /* GLee.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = GLee.c; path = ../../source/GLee.c; sourceTree = SOURCE_ROOT; };
+		BA0B5CCE0F5D245C004B5A82 /* GLee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLee.h; path = ../../source/GLee.h; sourceTree = SOURCE_ROOT; };
+		BA0B5CD80F5D249F004B5A82 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		BAB82A020F5BCD5100E95614 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+		BAB82A030F5BCD5100E95614 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		BAB82A700F5BD38D00E95614 /* ExposedParameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ExposedParameter.cpp; path = ../../source/ExposedParameter.cpp; sourceTree = SOURCE_ROOT; };
+		BAB82A710F5BD38D00E95614 /* ExposedParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExposedParameter.h; path = ../../source/ExposedParameter.h; sourceTree = SOURCE_ROOT; };
+		BAB82A720F5BD38D00E95614 /* GLUTApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLUTApplication.cpp; path = ../../source/GLUTApplication.cpp; sourceTree = SOURCE_ROOT; };
+		BAB82A730F5BD38D00E95614 /* GLUTApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLUTApplication.h; path = ../../source/GLUTApplication.h; sourceTree = SOURCE_ROOT; };
+		BAB82A740F5BD38D00E95614 /* SpringWater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpringWater.cpp; path = ../../source/SpringWater.cpp; sourceTree = SOURCE_ROOT; };
+		BAB82A750F5BD38D00E95614 /* SpringWater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpringWater.h; path = ../../source/SpringWater.h; sourceTree = SOURCE_ROOT; };
+		BAB82A760F5BD38D00E95614 /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Math.cpp; path = ../../source/Math.cpp; sourceTree = SOURCE_ROOT; };
+		BAB82A770F5BD38D00E95614 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Math.h; path = ../../source/Math.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		BAB82A7D0F5BD3C900E95614 /* ground.raw */ = {isa = PBXFileReference; lastKnownFileType = file; path = ground.raw; sourceTree = "<group>"; };
+		BAB82A7E0F5BD3C900E95614 /* sky.raw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sky.raw; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D0C4E910486CD37000505A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB82A040F5BCD5100E95614 /* GLUT.framework in Frameworks */,
+				BAB82A050F5BCD5100E95614 /* OpenGL.framework in Frameworks */,
+				BA0B5CD90F5D249F004B5A82 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		195DF8CFFE9D517E11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				508344B209E5C41E0093A071 /* SpringWaterMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20286C29FDCF999611CA2CEA /* SpringWaterMac */ = {
+			isa = PBXGroup;
+			children = (
+				5048396909E3304600765E4B /* Configuration Files */,
+				20286C2AFDCF999611CA2CEA /* Sources */,
+				20286C2CFDCF999611CA2CEA /* Resources */,
+				20286C32FDCF999611CA2CEA /* External Frameworks and Libraries */,
+				195DF8CFFE9D517E11CA2CBB /* Products */,
+			);
+			name = SpringWaterMac;
+			sourceTree = "<group>";
+		};
+		20286C2AFDCF999611CA2CEA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BA0B5CCD0F5D245C004B5A82 /* GLee.c */,
+				BA0B5CCE0F5D245C004B5A82 /* GLee.h */,
+				BAB82A700F5BD38D00E95614 /* ExposedParameter.cpp */,
+				BAB82A710F5BD38D00E95614 /* ExposedParameter.h */,
+				BAB82A720F5BD38D00E95614 /* GLUTApplication.cpp */,
+				BAB82A730F5BD38D00E95614 /* GLUTApplication.h */,
+				BAB82A740F5BD38D00E95614 /* SpringWater.cpp */,
+				BAB82A750F5BD38D00E95614 /* SpringWater.h */,
+				BAB82A760F5BD38D00E95614 /* Math.cpp */,
+				BAB82A770F5BD38D00E95614 /* Math.h */,
+				32DBCF6D0370B57F00C91783 /* SpringWaterMac_Prefix.pch */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		20286C2CFDCF999611CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BAB82A7D0F5BD3C900E95614 /* ground.raw */,
+				BAB82A7E0F5BD3C900E95614 /* sky.raw */,
+				8D0C4E960486CD37000505A6 /* Info.plist */,
+				0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		20286C32FDCF999611CA2CEA /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BA0B5CD80F5D249F004B5A82 /* CoreFoundation.framework */,
+				BAB82A020F5BCD5100E95614 /* GLUT.framework */,
+				BAB82A030F5BCD5100E95614 /* OpenGL.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		5048396909E3304600765E4B /* Configuration Files */ = {
+			isa = PBXGroup;
+			children = (
+				5048396D09E3307300765E4B /* SpringWaterMacProj.xcconfig */,
+				5048396E09E3307300765E4B /* SpringWaterMacTarget.xcconfig */,
+			);
+			name = "Configuration Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D0C4E890486CD37000505A6 /* SpringWaterMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0E91AC508A95435008D54AB /* Build configuration list for PBXNativeTarget "SpringWaterMac" */;
+			buildPhases = (
+				8D0C4E8C0486CD37000505A6 /* Resources */,
+				8D0C4E8F0486CD37000505A6 /* Sources */,
+				8D0C4E910486CD37000505A6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpringWaterMac;
+			productInstallPath = "$(HOME)/Applications";
+			productName = SpringWaterMac;
+			productReference = 508344B209E5C41E0093A071 /* SpringWaterMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20286C28FDCF999611CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "SpringWaterMac" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 20286C29FDCF999611CA2CEA /* SpringWaterMac */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D0C4E890486CD37000505A6 /* SpringWaterMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D0C4E8C0486CD37000505A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E8D0486CD37000505A6 /* InfoPlist.strings in Resources */,
+				BAB82A7F0F5BD3C900E95614 /* ground.raw in Resources */,
+				BAB82A800F5BD3C900E95614 /* sky.raw in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D0C4E8F0486CD37000505A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB82A790F5BD38D00E95614 /* ExposedParameter.cpp in Sources */,
+				BAB82A7A0F5BD38D00E95614 /* GLUTApplication.cpp in Sources */,
+				BAB82A7B0F5BD38D00E95614 /* SpringWater.cpp in Sources */,
+				BAB82A7C0F5BD38D00E95614 /* Math.cpp in Sources */,
+				BA0B5CCF0F5D245C004B5A82 /* GLee.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0867D6AAFE840B52C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0867D6ABFE840B52C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0E91AC608A95435008D54AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5048396E09E3307300765E4B /* SpringWaterMacTarget.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = SpringWaterMac_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+			};
+			name = Debug;
+		};
+		C0E91AC708A95435008D54AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5048396E09E3307300765E4B /* SpringWaterMacTarget.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_PREFIX_HEADER = SpringWaterMac_Prefix.pch;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRESERVE_DEAD_CODE_INITS_AND_TERMS = YES;
+			};
+			name = Release;
+		};
+		C0E91ACA08A95435008D54AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5048396D09E3307300765E4B /* SpringWaterMacProj.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		C0E91ACB08A95435008D54AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5048396D09E3307300765E4B /* SpringWaterMacProj.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				SDKROOT = macosx10.5;
+				SEPARATE_STRIP = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0E91AC508A95435008D54AB /* Build configuration list for PBXNativeTarget "SpringWaterMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E91AC608A95435008D54AB /* Debug */,
+				C0E91AC708A95435008D54AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0E91AC908A95435008D54AB /* Build configuration list for PBXProject "SpringWaterMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0E91ACA08A95435008D54AB /* Debug */,
+				C0E91ACB08A95435008D54AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20286C28FDCF999611CA2CEA /* Project object */;
+}
