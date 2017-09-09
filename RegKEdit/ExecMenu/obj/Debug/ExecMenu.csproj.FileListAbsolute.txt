@@ -1,0 +1,8 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\bin\Debug\ExecMenu.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\bin\Debug\ExecMenu.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\obj\Debug\ExecMenu.Form1.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\obj\Debug\ExecMenu.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\obj\Debug\ExecMenu.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\obj\Debug\ExecMenu.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ExecMenu\ExecMenu\obj\Debug\ExecMenu.pdb
