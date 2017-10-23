@@ -17,9 +17,13 @@ namespace KBView
             Application.SetCompatibleTextRenderingDefault(false);
             //string[] input_file_name = {"C:\\test.jpg"};
             // MessageBox.Show(arg2.Length.ToString());
+            if (args.Length > 0)
+            {
+
+                Application.Run(new Form1(args));
+            }
+            else Application.Run(new Form1());
             
-            Application.Run(new Form1(args));
-           
           //  MessageBox.Show(args.Length.ToString());
         }
     }
