@@ -36,7 +36,7 @@ namespace KBView
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
                 //MessageBox.Show("okay");
-
+                contextMenuStrip1.Items.Add("삭제", null);
                 contextMenuStrip1.Show(pictureBox1, e.X, e.Y);
                 //MessageBox.Show("okay");
                 contextMenuStrip1.ItemClicked += new ToolStripItemClickedEventHandler(
