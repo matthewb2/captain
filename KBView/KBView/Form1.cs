@@ -21,6 +21,7 @@ namespace KBView
 
 
         string cut_file;
+        int max_file;
 
         private Point MouseDownLocation;
 
@@ -36,7 +37,6 @@ namespace KBView
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
                 //MessageBox.Show("okay");
-                contextMenuStrip1.Items.Add("삭제", null);
                 contextMenuStrip1.Show(pictureBox1, e.X, e.Y);
                 //MessageBox.Show("okay");
                 contextMenuStrip1.ItemClicked += new ToolStripItemClickedEventHandler(
@@ -56,35 +56,35 @@ namespace KBView
             {
                 fileName = cut_file;
                 // MessageBox.Show(fileName);
+                max_file = filePaths.Length;
 
                 //string currFile = pictureBox1.Tag.ToString();
-                //MessageBox.Show(path);
-                if (pos <= 0)
+                
+                if (pos>=0 && pos < max_file)
                 {
-
-                    pos = Array.IndexOf(filePaths, fileName);
-                    // MessageBox.Show(pos.ToString());
-
-                }
-                try
-                {
+                    int po = pos;
                     pos++;
                     pictureBox1.Image = Image.FromFile(filePaths[pos]);
-                    cut_file = filePaths[pos];
+                    // cut_file = filePaths[pos];
                     pictureBox1_zoom(1);
-                    MessageBox.Show(filePaths[pos - 1]);
+                   //  MessageBox.Show(filePaths[po]);
                     try
                     {
                         System.GC.Collect();
                         System.GC.WaitForPendingFinalizers();
-                        File.Delete(filePaths[pos - 1]);
+                        File.Delete(filePaths[po]);
                         //File.Delete("C:\\index.jpg");
+                        cut_file = filePaths[pos];
+                        max_file = max_file - 1;
                     }
                     catch { MessageBox.Show("fail"); }
 
-                }
-                catch { }
+                
 
+                }
+                else { }
+                
+                    
 
             }
 
@@ -131,7 +131,8 @@ namespace KBView
             filePaths = Directory.GetFiles(path, "*.jpg");
 
             toolStripStatusLabel1.Text = "가로" + pictureBox1.Image.Width.ToString() + " 세로 " + pictureBox1.Image.Height.ToString();
-
+            contextMenuStrip1.Items.Add("삭제", null);
+               
 
         }
 
@@ -145,7 +146,8 @@ namespace KBView
             button2.MouseEnter += new EventHandler(button2_MouseEnter);
             button2.MouseLeave += new EventHandler(button2_MouseLeave);
 
-
+            contextMenuStrip1.Items.Add("삭제", null);
+               
 
         }
 
@@ -247,28 +249,10 @@ namespace KBView
 
             toolStripStatusLabel1.Text = "가로" + pictureBox1.Image.Width.ToString() + " 세로 " + pictureBox1.Image.Height.ToString();
 
-          
-            float c_width, c_height;
-            float n_width, n_height;
+            Bitmap tmp = new Bitmap(cut_file);
 
-            if (cut_file != null)
-            {
-
-
-                c_width = pictureBox1.Width;
-                c_height = pictureBox1.Height;
-
-                n_height = this.Height - 100;
-                n_width = c_width / c_height * n_height;
-
-
-                Size newSize = new Size((int)(n_width), (int)(n_height));
-                Bitmap tmp = new Bitmap(cut_file);
-                Bitmap bmp = new Bitmap(tmp, newSize);
-                CenterPictureBox(pictureBox1, bmp);
-
-
-            }
+            //tabImageView.Controls.Add(picBoxView);
+            CenterPictureBox(pictureBox1, tmp);
           
 
 
@@ -499,6 +483,11 @@ namespace KBView
         }
 
         private void button1_Click_2(object sender, EventArgs e)
+        {
+            NextToolStripMenuItem_Click_1(sender, e);
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
         {
             NextToolStripMenuItem_Click_1(sender, e);
         }
