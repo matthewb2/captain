@@ -1,0 +1,54 @@
+﻿<Window.Resources>
+
+  <XmlDataProvider x:Key="BookmarkData" XPath="/Favorites">
+
+    <x:XData>
+
+      <Favorites xmlns="">
+
+        <Bookmark>
+
+          <Title>Google</Title>
+
+          <URL>http://www.google.com</URL>
+
+        </Bookmark>
+
+        <Bookmark>
+
+          <Title>Amazon</Title>
+
+          <URL>http://www.amazon.com</URL>
+
+        </Bookmark>
+
+        <Bookmark>
+
+          <Title>Slashdot</Title>
+
+          <URL>http://www.slashdot.com</URL>
+
+        </Bookmark>
+
+        <Bookmark>
+
+          <Title>Ars Technica</Title>
+
+          <URL>http://www.arstechnica.com</URL>
+
+        </Bookmark>
+
+        <Bookmark>
+
+          <Title>New Egg</Title>
+
+          <URL>http://www.newegg.com</URL>
+
+        </Bookmark>
+
+      </Favorites>
+
+    </x:XData>
+
+  </XmlDataProvider>
+

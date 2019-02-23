@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="WpfApplication4">
+</Property><Property Name="Solution File" Value="C:\Users\Administrator\Downloads\WpfApplication4(1)\WpfApplication4.sln">
+</Property><Property Name="Date" Value="2016년 1월 10일 일요일">
+</Property><Property Name="Time" Value="오후 22:47">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="WpfApplication4.sln" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4.sln">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\WpfApplication4.csproj" Description="Project file successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\WpfApplication4.csproj">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\App.xaml.cs" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\App.xaml.cs">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\Window1.xaml.cs" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\Window1.xaml.cs">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\Properties\Settings.settings" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\Properties\Resources.resx" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\App.xaml" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\App.xaml">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\Window1.xaml" Description="File successfully backed up as C:\Users\Administrator\Downloads\WpfApplication4(1)\Backup\WpfApplication4\Window1.xaml">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\WpfApplication4.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="WpfApplication4" Source="WpfApplication4\WpfApplication4.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="WpfApplication4.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="WpfApplication4.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="WpfApplication4" Source="WpfApplication4\WpfApplication4.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>
