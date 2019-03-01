@@ -16,6 +16,7 @@
                 <MenuItem Header="자막" />
                 <MenuItem Header="다음" Click="NextFile_Click"/>
                 <MenuItem Header="이전" Click="PrevFile_Click"/>
+                <MenuItem Header="삭제" Click="DeleteFile_Click"/>
                 <MenuItem Header="화면저장" Click="CaptureFrame_Click"/>
                 <Separator />
                 <MenuItem Header="최소화" Click="Minimize_Click" />

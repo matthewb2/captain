@@ -82,3 +82,4 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\Mplayer\WpfApplication4\obj\
 C:\Users\user\Documents\Visual Studio 2017\Projects\Mplayer\WpfApplication4\obj\Debug\WpfApplication4.exe
 C:\Users\user\Documents\Visual Studio 2017\Projects\Mplayer\WpfApplication4\obj\Debug\WpfApplication4.pdb
 C:\Users\user\Documents\Visual Studio 2017\Projects\Mplayer\WpfApplication4\bin\Debug\App.xaml.cs
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\Mplayer\WpfApplication4\bin\Debug\App.xaml.cs
