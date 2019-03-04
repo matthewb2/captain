@@ -16,12 +16,12 @@ namespace ScreenRecord
       
 
         private Point _lastLeftClickPos, _lastRightClickPos;
-        private bool _isVertical;
+      
         private readonly Color _darkTan = Color.FromArgb(176, 125, 68);
         private const int _STRING_PADDING = 10;
         private const string _SIE_STRING_FORMAT = "{0}x{1}";
         // private readonly Bitmap _texture = Resources.SeamlessWood;
-        private BufferedGraphics _bufGraphics;
+      
         
 
         protected override void OnMouseMove(MouseEventArgs e)

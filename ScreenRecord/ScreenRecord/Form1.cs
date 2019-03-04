@@ -38,6 +38,7 @@ namespace ScreenRecord
         private Stopwatch _rebootWatch;
 
         int leftTime,totalTime;
+        int elapse;
 
         private Rectangle _screenArea;
 
@@ -50,6 +51,7 @@ namespace ScreenRecord
 
         Form2 form2 = new Form2();
 
+        static EventWaitHandle _waitHandle = new AutoResetEvent(false);
 
 
 
@@ -268,10 +270,11 @@ namespace ScreenRecord
                 int selectedIndex = comboBox1.SelectedIndex;
                 int selectedValue = (int)comboBox1.SelectedValue;
 
-                totalTime = (selectedIndex * 60)+30;
+                totalTime = selectedValue*60;
 
                 leftTime = totalTime;
 
+                
 
             }
         }
@@ -286,23 +289,31 @@ namespace ScreenRecord
                 this.lb_stopWatch.Invoke(new Action(() =>
               {
               this.lb_stopWatch.Text = string.Format("{0:00}:{1:00}:{2:00}", _stopWatch.Elapsed.Hours, _stopWatch.Elapsed.Minutes, (int)_stopWatch.Elapsed.Seconds);
-                                    }) );
-
-
-
-                
+                  
+              }) );
+                                                            
 
                 this.lb_rebootWatch.Invoke(new Action(() =>
                 {
                     if (checkBox3.Checked)
                     {
 
-                        leftTime = totalTime - (int)_stopWatch.Elapsed.Seconds;
-                        int h_leftTime = leftTime / 3600;
-                        int m_leftTime = leftTime / 60;
-                        int s_leftTime = leftTime % 60;
-                        //   this.lb_rebootWatch.Text = string.Format("{0:00}:{1:00}:{2:00}", _stopWatch.Elapsed.Hours, _stopWatch.Elapsed.Minutes, (int)_stopWatch.Elapsed.Seconds);
-                        this.lb_rebootWatch.Text = string.Format("{0:00}:{1:00}:{2:00}", h_leftTime, m_leftTime, s_leftTime);
+                        leftTime = totalTime - (int)_stopWatch.Elapsed.TotalSeconds;
+                        TimeSpan t = TimeSpan.FromSeconds(leftTime);
+                        //this.lb_rebootWatch.Text = string.Format("{0:00}:{1:00}:{2:00}", h_leftTime, m_leftTime, s_leftTime);
+                        this.lb_rebootWatch.Text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s",
+                                                                        t.Hours,
+                                                                        t.Minutes,
+                                                                        t.Seconds);
+
+                        if (leftTime == 0)
+                        {
+                            // terminate system
+                            bt_Save_Click(sender, eventArgs);
+
+                          
+
+                        }
                     }
                 }));
             }
@@ -315,20 +326,20 @@ namespace ScreenRecord
                 
                 _writer.Close(); // End Recoding
 
+                //stop recording
+                capture.Stop();
+                w.Dispose();
+                w = null;
+                capture.Dispose();
+                capture = null;
+
                 if (checkBox1.Checked == true)
                 {
-                    //stop recording
-                    capture.Stop();
-                    w.Dispose();
-                    w = null;
-                    capture.Dispose();
-                    capture = null;
-
-
                     string files = "-i " + fullName + ".avi -i " + fullName + ".wav -c:v copy -c:a aac -strict experimental " + fullName + ".mp4";
                     string cmdtext = "/C ffmpeg " + files;
                     var process = System.Diagnostics.Process.Start("CMD.exe", cmdtext);
                     process.WaitForExit();
+
                     try
                     {
                         System.IO.File.Delete(fullName + ".avi");
@@ -336,10 +347,20 @@ namespace ScreenRecord
                     }
                     catch { MessageBox.Show("fail"); }
 
+                }
+
+                if (checkBox3.Checked == true && leftTime == 0)
+                {
+                    System.Windows.Forms.Application.Exit();
+                    Process.Start("shutdown", "/s /t 0");
 
                 }
+
+
             }
         }
+
+      
 
         private void bt_Save_Click( object sender, EventArgs e )
         {
@@ -349,16 +370,17 @@ namespace ScreenRecord
 
             this._isRecording = false;
 
-            //MessageBox.Show(@"File saved!");
-            //form2.TransparencyKey = Color.Turquoise;
-            //form2.BackColor = Color.Turquoise;
-            // form2.Opacity = 80;
           
+           
             form2.TopMost = true;
             form2.Opacity = .6;
             form2.Show();
-            //this.Show();
-           
+
+            //MessageBox.Show(@"File saved!");
+
+
+            
+
 
         }
 

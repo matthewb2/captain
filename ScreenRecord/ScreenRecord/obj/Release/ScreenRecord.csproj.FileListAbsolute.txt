@@ -85,7 +85,6 @@ C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ScreenRecord\Screen
 C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.csproj.CopyComplete
 C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.exe
 C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.pdb
-C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.csprojAssemblyReference.cache
 C:\Users\user\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.csprojAssemblyReference.cache
 C:\Users\user\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.Form1.resources
 C:\Users\user\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.Form2.resources
@@ -106,3 +105,4 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\bi
 C:\Users\user\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\bin\Release\NAudio.Lame.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\bin\Release\NAudio.xml
 C:\Users\user\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.csproj.CopyComplete
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ScreenRecord\ScreenRecord\obj\Release\ScreenRecord.csprojAssemblyReference.cache
