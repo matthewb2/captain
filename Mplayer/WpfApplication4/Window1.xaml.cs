@@ -161,7 +161,7 @@ namespace WpfApplication4
             int SliderValue = (int)TimeLine.Value;
 
             btnPlay.Focusable = False;
-            btnPause.Focusable = False;
+            //btnPause.Focusable = False;
             btnStop.Focusable = False;
             btnBrowse.Focusable = False;
 
@@ -394,7 +394,7 @@ namespace WpfApplication4
                  if (timerVideoTime.IsEnabled)
                  {
                      // Do Something
-                     btnPause_Click(sender, e);
+                     //btnPause_Click(sender, e);
                  }
                  else if (!timerVideoTime.IsEnabled)
                  {
@@ -465,8 +465,16 @@ namespace WpfApplication4
             {
 
                 mediaPlayer1.Play();
-                btnPlay.IsEnabled = false;
-                btnPause.IsEnabled = true;
+                //btnPlay.IsEnabled = false;
+                if (btnPlay.Content == FindResource("Play"))
+                {
+                    btnPlay.Content = FindResource("Stop");
+                }
+                else
+                {
+                    btnPlay.Content = FindResource("Play");
+                }
+                //btnPause.IsEnabled = true;
                 btnStop.IsEnabled = true;
 
 
@@ -556,7 +564,7 @@ namespace WpfApplication4
 
            
         }
-
+        /*
         public void btnPause_Click(object sender, RoutedEventArgs e)
         {
             if (mediaPlayer1.HasVideo)
@@ -584,7 +592,7 @@ namespace WpfApplication4
 
             }
         }
-
+        */
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
             if (mediaPlayer1.HasVideo)
@@ -592,7 +600,7 @@ namespace WpfApplication4
 
                 mediaPlayer1.Stop();
                 btnPlay.IsEnabled = true;
-                btnPause.IsEnabled = false;
+                //btnPause.IsEnabled = false;
                 btnStop.IsEnabled = false;
 
 
@@ -620,7 +628,7 @@ namespace WpfApplication4
             //TimeSpan Total = new TimeSpan(0, 0, mediaPlayer1.NaturalDuration.TimeSpan.TotalSeconds);
 
             //btnPlay.IsEnabled = true;
-            btnPause.IsEnabled = true;
+            //btnPause.IsEnabled = true;
             btnStop.IsEnabled = true;
 
             tst.Text = TotalTime.ToString();
