@@ -8,6 +8,10 @@
     <Window.Background>
         <SolidColorBrush Opacity="0.2" Color="Black"/>
     </Window.Background>
+    <Window.Resources>
+        <Image x:Key="Play" Source="Play.gif"  />
+        <Image x:Key="Stop" Source="Pause.gif" />
+    </Window.Resources>
 
     <Grid Margin="0,0,0,-3">
 
@@ -35,52 +39,26 @@
         <TextBlock Height="25" HorizontalAlignment="Left" Margin="210,0,0,13" VerticalAlignment="Bottom" Width="270" Name="title"></TextBlock>
 
         <Button IsEnabled="False" Height="35" Width="35"  HorizontalAlignment="Left" Margin="10,0,0,10" x:Name="btnPlay" VerticalAlignment="Bottom" Click="btnPlay_Click" Cursor="Hand">
-            <Button.Template>
-                <ControlTemplate>
-                    <Grid>
-                        <Image x:Name="Background" Source="/play.gif" Margin="0,0,5,0" />
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="true">
-                            <Setter Property="Source" TargetName="Background" Value="pack://application:,,,/c2_Play.gif">
-                            </Setter>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Source" TargetName="Background" Value="pack://application:,,,/c_Play.gif">
-                            </Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-
-                </ControlTemplate>
-
-            </Button.Template>
-
+            <DynamicResource ResourceKey="Play"/>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <StackPanel Width="{TemplateBinding Width}" Height="{TemplateBinding Width}" x:Name="panel">
+                                    <ContentPresenter Width="{TemplateBinding Width}" Height="{TemplateBinding Width}" />
+                                </StackPanel>
+                               
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
         </Button>
 
-        <Button IsEnabled="False" Height="35" Width="35" HorizontalAlignment="Left" Margin="46,0,0,9" x:Name="btnPause" VerticalAlignment="Bottom" Click="btnPause_Click" Cursor="Hand">
-            <Button.Template>
-                <ControlTemplate>
-                    <Grid>
-                        <Image x:Name="Background2"  Source="pack://application:,,,/Pause.gif" Margin="0,0,5,0" />
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="true">
-                            <Setter Property="Source" TargetName ="Background2" Value="pack://application:,,,/c2_btnPause.gif">
-                            </Setter>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Source" TargetName ="Background2" Value="pack://application:,,,/c_btnPause.gif">
-                            </Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+        
 
-                </ControlTemplate>
-            </Button.Template>
-
-        </Button>
-
-
-        <Button Content="중지" IsEnabled="False" Height="35" Width="35" HorizontalAlignment="Left" Margin="87,0,0,9" x:Name="btnStop" VerticalAlignment="Bottom" Click="btnStop_Click" Cursor="Hand">
+        <Button Content="중지" IsEnabled="False" Height="35" Width="35" HorizontalAlignment="Left" Margin="50,0,0,10" x:Name="btnStop" VerticalAlignment="Bottom" Click="btnStop_Click" Cursor="Hand" RenderTransformOrigin="-1.114,0.486">
             <Button.Template>
                 <ControlTemplate>
                     <Grid>
@@ -99,7 +77,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="열기" Height="35" Width="35" HorizontalAlignment="Left" Margin="130,0,0,10" x:Name="btnBrowse" VerticalAlignment="Bottom" Click="btnBrowse_Click" Cursor="Hand" RenderTransformOrigin="-1.625,0.475">
+        <Button Content="열기" Height="35" Width="35" HorizontalAlignment="Left" Margin="85,0,0,10" x:Name="btnBrowse" VerticalAlignment="Bottom" Click="btnBrowse_Click" Cursor="Hand" RenderTransformOrigin="-1.625,0.475">
             <Button.Template>
                 <ControlTemplate>
                     <Grid>
@@ -118,7 +96,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="목록" Height="25" Width="25" HorizontalAlignment="Left" Margin="180,0,0,14" x:Name="btnPlayLIsts" Click="btnPlayLists_Click" VerticalAlignment="Bottom" Cursor="Hand" RenderTransformOrigin="-1.625,0.475">
+        <Button Content="목록" Height="25" Width="25" HorizontalAlignment="Left" Margin="127,0,0,14" x:Name="btnPlayLIsts" Click="btnPlayLists_Click" VerticalAlignment="Bottom" Cursor="Hand" RenderTransformOrigin="-1.625,0.475">
             <Button.Template>
                 <ControlTemplate>
                     <Grid>
