@@ -64,7 +64,7 @@ if __name__ == "__main__":
             price = df['close'].tail(1).to_numpy()[0]
             std = get_std_data(coin)
             print("coin:{2} price: {0} std:{1}".format(price, std, coin.replace('USDT','')))
-            myToken = "xoxb-5283584414615-5310812738449-qkMquccnnpmQsRp6UHu79qM8"
+            myToken = ""
             message="{0} {1}".format(coin.replace('USDT',''), price)
             if (abs(last[coin]-price) > std*1.5):
                 print("{0} {1}".format(coin, price))
