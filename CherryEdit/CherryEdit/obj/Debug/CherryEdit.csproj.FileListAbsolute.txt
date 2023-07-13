@@ -1,0 +1,11 @@
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\bin\Debug\CherryEdit.exe.config
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\bin\Debug\CherryEdit.exe
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\bin\Debug\CherryEdit.pdb
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.About.resources
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.Properties.Resources.resources
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.UserControl1.resources
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.csproj.GenerateResource.cache
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.csproj.CoreCompileInputs.cache
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.exe
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.pdb
+C:\Users\bests\source\repos\CherryEdit\CherryEdit\obj\Debug\CherryEdit.Form1.resources
