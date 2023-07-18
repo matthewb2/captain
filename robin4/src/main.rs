@@ -14,6 +14,7 @@ use std::io::BufReader;
 use std::io::Read;
 
 
+
 // ANCHOR: main
 const APP_ID: &str = "org.gtk_rs.Actions2";
 
@@ -35,11 +36,20 @@ fn main() -> glib::ExitCode {
     // Set keyboard accelerator to trigger "win.close".
     application.set_accels_for_action("win.close", &["<Ctrl>C"]);
 	application.set_accels_for_action("win.open", &["<Ctrl>O"]);
+	application.set_accels_for_action("win.save", &["<Ctrl>S"]);
     // Run the application
     application.run()
 }
 // ANCHOR_END: main
 
+/*
+fn actions_added(some_vec: Vec<SimpleAction>, actions: SimpleActionGroup){
+	for i in &some_vec {
+		actions.add_action(i);
+	}
+	
+}
+*/
 // ANCHOR: build_ui
 fn build_ui(app: &Application) {
 	
@@ -56,7 +66,7 @@ fn build_ui(app: &Application) {
 	    let file = gtk::gio::File::for_path("buffer.rs");
     let file = sourceview5::File::builder().location(&file).build();
     let loader = sourceview5::FileLoader::new(&buffer, &file);
-	    loader.load_async_with_callback(
+	loader.load_async_with_callback(
         Priority::default(),
         gtk::gio::Cancellable::NONE,
         move |current_num_bytes, total_num_bytes| {
@@ -77,26 +87,79 @@ fn build_ui(app: &Application) {
         .application(app)
 		.build();
 	
-	window.set_default_size(600, 550);
+	window.set_default_size(650, 600);
 	window.set_title(Some("Robin Editor"));
     // Add action "close" to `window` taking no parameter
     let action_close = SimpleAction::new("close", None);
     action_close.connect_activate(clone!(@weak window => move |_, _| {
         window.close();
     }));
-    window.add_action(&action_close);
+    
 	
 	let action_open = SimpleAction::new("open", None);
+	let action_save = SimpleAction::new("save", None);
+	/*
+	let window_save = window.as_ref();
 	
-	action_open.connect_activate(clone!(@weak window => move |_, _| {
-        let file_chooser = FileChooserDialog::new(
-            Some("Import File"),
-            Some(&window),
+	action_save.connect_activate( move |_, _| {
+		 let file_chooser = FileChooserDialog::new(
+            Some("Save File"),
+            Some(*window_save),
             FileChooserAction::Open,
-            &[("Open", ResponseType::Ok), ("Cancel", ResponseType::Cancel)],
+            &[("저장", ResponseType::Ok), ("취소", ResponseType::Cancel)],
         );
 		
-		file_chooser.connect_response(clone!(@weak buffer => move |file_chooser, response| {
+	});
+	*/
+	
+	//save action
+	action_save.connect_activate(clone!(@weak window, @weak buffer => move |_, _| {
+		let file_chooser = FileChooserDialog::new(
+            Some("Save File"),
+            Some(&window),
+            FileChooserAction::Open,
+            &[("저장", ResponseType::Ok), ("취소", ResponseType::Cancel)],
+        );
+		let buffer = buffer.clone();
+		file_chooser.connect_response(clone!(@weak window, @weak buffer => move |file_chooser, response| {
+            if response == gtk::ResponseType::Ok {
+                let file = file_chooser.file().expect("Couldn't get filename");
+				    let file = sourceview5::File::builder().location(&file).build();
+					let saver = sourceview5::FileSaver::new(&buffer, &file);
+						saver.save_async_with_callback(
+						Priority::default(),
+						gtk::gio::Cancellable::NONE,
+						move |current_num_bytes, total_num_bytes| {
+							println!(
+								"saving: {:?}",
+								(current_num_bytes as f32 / total_num_bytes as f32) * 100f32
+							);
+						},
+						|res| {
+							println!("saved: {:?}", res);
+						},
+					);
+				
+            
+            }
+            file_chooser.destroy();
+        }));
+		
+		file_chooser.show();
+		println!("saved");
+	}));
+	
+	//open action
+	
+	action_open.connect_activate(clone!(@weak window, @weak buffer => move |_, _| {
+        let file_chooser = FileChooserDialog::new(
+            Some("파일 열기"),
+            Some(&window),
+            FileChooserAction::Open,
+            &[("열기", ResponseType::Ok), ("취소", ResponseType::Cancel)],
+        );
+		
+		file_chooser.connect_response(clone!(@strong window, @weak buffer => move |file_chooser, response| {
             if response == gtk::ResponseType::Ok {
                 let file = file_chooser.file().expect("Couldn't get filename");
 				/*
@@ -117,23 +180,27 @@ fn build_ui(app: &Application) {
                 let mut contents = String::new();
                 let _ = reader.read_to_string(&mut contents);
 				
-				//let buffer = view.buffer();
-				buffer.set_text(&contents);
+				&buffer.set_text(&contents);
             
             }
             file_chooser.close();
         }));
+		
         file_chooser.show();
     }));
 	
+	
 	window.add_action(&action_open);
+	window.add_action(&action_save);
+	window.add_action(&action_close);
 
     // ANCHOR: action_group
     // Create a new action group and add actions to it
     let actions = SimpleActionGroup::new();
     window.insert_action_group("win", Some(&actions));
-    actions.add_action(&action_close);
-	actions.add_action(&action_open);
+    let mut action_vec = vec![action_open, action_save, action_close];
+	//actions_added(action_vec.clone(), actions.clone());
+	action_vec.iter_mut().for_each(|e| actions.add_action(e));
     // ANCHOR_END: action_group
 
 	let header_bar = gtk::HeaderBar::new();
@@ -142,6 +209,7 @@ fn build_ui(app: &Application) {
 	let button1 = gtk::MenuButton::new();
 	let menumodel = gio::Menu::new();
 		menumodel.append(Some("열기"), Some("win.open"));
+		menumodel.append(Some("저장"), Some("win.save"));
 		menumodel.append(Some("닫기"), Some("win.close"));
 	
 	button1.set_icon_name("open-menu-symbolic");
@@ -165,7 +233,6 @@ fn build_ui(app: &Application) {
     container.append(&map);
 	scrolled_window.set_child(Some(&container));
 	window.set_child(Some(&scrolled_window));
-    //window.set_child(Some(&container));
     // Present window
     window.present();
 }
