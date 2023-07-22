@@ -23,9 +23,9 @@ app.use(cors(corsOptions));
 
 const db = mysql.createPool({
   host: "localhost",
-  user: "apple",
-  password: "ws7890",
-  database: "apple",
+  user: "",
+  password: "",
+  database: "",
 });
 /*
 app.get("/", (req, res) => {
